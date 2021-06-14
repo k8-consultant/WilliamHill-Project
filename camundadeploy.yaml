@@ -16,9 +16,73 @@ spec:
       creationTimestamp: null
       labels:
         app: camunda
-    spec:
+    spec: 
+      securityContext: 
+        runAsGroup: 1000 
+        runAsUser:  1000
       containers:
-      - image: camunda
-        name: camunda
-        resources: {}
-status: {}
+      - image: camunda/camunda-bpm-platform:latest
+        name: camunda 
+        ports: 
+        - containerPort: 8080
+        env: 
+          - name: USER_NAME
+            valueFrom:
+                secretKeyRef:
+                   name: secret2   
+                   key:  my-release-mysql
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

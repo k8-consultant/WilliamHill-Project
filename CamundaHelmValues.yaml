@@ -1,0 +1,8 @@
+database:
+  internal:
+    enabled: true
+  external:
+    enabled: true
+    credentialsSecertName: api-key
+    driver: "com.mysql.jdbc.Driver"
+    url: "jdbc:mysql://polling-app-mysql-0.polling-app-mysql.default.svc.cluster.local:3306"

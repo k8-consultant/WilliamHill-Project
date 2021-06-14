@@ -1,0 +1,197 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    checksum/configuration: 758f796327604ebfa57dbf16275e80d4376ba4f184762fc263fc68b08292fcef
+  creationTimestamp: "2021-06-13T20:21:14Z"
+  generateName: my-release-mysql-
+  labels:
+    app.kubernetes.io/component: primary
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: mysql
+    controller-revision-hash: my-release-mysql-78646f48d6
+    helm.sh/chart: mysql-8.6.2
+    statefulset.kubernetes.io/pod-name: my-release-mysql-0
+  name: my-release-mysql-0
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: StatefulSet
+    name: my-release-mysql
+    uid: d2988c9b-870e-4d45-ad9f-f1cab91e8cfc
+  resourceVersion: "80035"
+  selfLink: /api/v1/namespaces/default/pods/my-release-mysql-0
+  uid: 19377116-68bc-4ed3-bd89-f2277515295e
+spec:
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - podAffinityTerm:
+          labelSelector:
+            matchLabels:
+              app.kubernetes.io/component: primary
+              app.kubernetes.io/instance: my-release
+              app.kubernetes.io/name: mysql
+          namespaces:
+          - default
+          topologyKey: kubernetes.io/hostname
+        weight: 1
+  containers:
+  - env:
+    - name: BITNAMI_DEBUG
+      value: "false"
+    - name: MYSQL_ROOT_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          key: mysql-root-password
+          name: my-release-mysql
+    - name: MYSQL_DATABASE
+      value: my_database
+    image: docker.io/bitnami/mysql:8.0.25-debian-10-r16
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      exec:
+        command:
+        - /bin/bash
+        - -ec
+        - |
+          password_aux="${MYSQL_ROOT_PASSWORD:-}"
+          if [[ -f "${MYSQL_ROOT_PASSWORD_FILE:-}" ]]; then
+              password_aux=$(cat "$MYSQL_ROOT_PASSWORD_FILE")
+          fi
+          mysqladmin status -uroot -p"${password_aux}"
+      failureThreshold: 3
+      initialDelaySeconds: 120
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    name: mysql
+    ports:
+    - containerPort: 3306
+      name: mysql
+      protocol: TCP
+    readinessProbe:
+      exec:
+        command:
+        - /bin/bash
+        - -ec
+        - |
+          password_aux="${MYSQL_ROOT_PASSWORD:-}"
+          if [[ -f "${MYSQL_ROOT_PASSWORD_FILE:-}" ]]; then
+              password_aux=$(cat "$MYSQL_ROOT_PASSWORD_FILE")
+          fi
+          mysqladmin status -uroot -p"${password_aux}"
+      failureThreshold: 3
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    resources: {}
+    securityContext:
+      runAsUser: 1001
+    startupProbe:
+      exec:
+        command:
+        - /bin/bash
+        - -ec
+        - |
+          password_aux="${MYSQL_ROOT_PASSWORD:-}"
+          if [[ -f "${MYSQL_ROOT_PASSWORD_FILE:-}" ]]; then
+              password_aux=$(cat "$MYSQL_ROOT_PASSWORD_FILE")
+          fi
+          mysqladmin status -uroot -p"${password_aux}"
+      failureThreshold: 60
+      initialDelaySeconds: 120
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /bitnami/mysql
+      name: data
+    - mountPath: /opt/bitnami/mysql/conf/my.cnf
+      name: config
+      subPath: my.cnf
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: my-release-mysql-token-v82x2
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  hostname: my-release-mysql-0
+  nodeName: gke-williamhill-default-pool-7aa33d11-v958
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1001
+  serviceAccount: my-release-mysql
+  serviceAccountName: my-release-mysql
+  subdomain: my-release-mysql
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: data
+    persistentVolumeClaim:
+      claimName: data-my-release-mysql-0
+  - configMap:
+      defaultMode: 420
+      name: my-release-mysql
+    name: config
+  - name: my-release-mysql-token-v82x2
+    secret:
+      defaultMode: 420
+      secretName: my-release-mysql-token-v82x2
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-06-13T20:21:19Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-06-13T20:21:19Z"
+    message: 'containers with unready status: [mysql]'
+    reason: ContainersNotReady
+    status: "False"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-06-13T20:21:19Z"
+    message: 'containers with unready status: [mysql]'
+    reason: ContainersNotReady
+    status: "False"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-06-13T20:21:19Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://0f3b9dfe7a7b20c854b037427f34dea6a7db20ded00e5400a4524df4973219e2
+    image: docker.io/bitnami/mysql:8.0.25-debian-10-r16
+    imageID: docker.io/bitnami/mysql@sha256:a1c0557eb77907f79e35be369914d01fa38554223c21034521becdede09b38b1
+    lastState: {}
+    name: mysql
+    ready: false
+    restartCount: 0
+    started: false
+    state:
+      running:
+        startedAt: "2021-06-13T20:21:44Z"
+  hostIP: 10.128.0.13
+  phase: Running
+  podIP: 10.100.2.58
+  podIPs:
+  - ip: 10.100.2.58
+  qosClass: BestEffort
+  startTime: "2021-06-13T20:21:19Z"

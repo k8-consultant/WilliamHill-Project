@@ -1,0 +1,366 @@
+Configure database
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+14-Jun-2021 13:29:22.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.43
+14-Jun-2021 13:29:22.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 28 2021 20:25:45 UTC
+14-Jun-2021 13:29:22.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.43.0
+14-Jun-2021 13:29:22.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+14-Jun-2021 13:29:22.541 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.4.89+
+14-Jun-2021 13:29:22.541 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+14-Jun-2021 13:29:22.541 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk
+14-Jun-2021 13:29:22.541 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.9+11-alpine-r0
+14-Jun-2021 13:29:22.542 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Alpine
+14-Jun-2021 13:29:22.542 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /camunda
+14-Jun-2021 13:29:22.542 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /camunda
+14-Jun-2021 13:29:22.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+14-Jun-2021 13:29:22.572 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+14-Jun-2021 13:29:22.572 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+14-Jun-2021 13:29:22.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+14-Jun-2021 13:29:22.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+14-Jun-2021 13:29:22.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+14-Jun-2021 13:29:22.574 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+14-Jun-2021 13:29:22.574 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+14-Jun-2021 13:29:22.574 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+14-Jun-2021 13:29:22.574 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+14-Jun-2021 13:29:22.575 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/camunda/conf/logging.properties
+14-Jun-2021 13:29:22.575 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Jun-2021 13:29:22.575 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx768m
+14-Jun-2021 13:29:22.576 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:MaxMetaspaceSize=256m
+14-Jun-2021 13:29:22.576 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+14-Jun-2021 13:29:22.576 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+14-Jun-2021 13:29:22.577 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+14-Jun-2021 13:29:22.577 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+14-Jun-2021 13:29:22.577 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/camunda
+14-Jun-2021 13:29:22.578 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/camunda
+14-Jun-2021 13:29:22.578 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/camunda/temp
+14-Jun-2021 13:29:22.589 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/lib/jvm/java-11-openjdk/lib/server:/usr/lib/jvm/java-11-openjdk/lib:/usr/lib/jvm/java-11-openjdk/../lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+14-Jun-2021 13:29:23.151 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+14-Jun-2021 13:29:23.198 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1091] milliseconds
+Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+14-Jun-2021 13:29:23.534 SEVERE [main] org.apache.tomcat.jdbc.pool.ConnectionPool.init Unable to create initial connections of pool.
+	java.sql.SQLSyntaxErrorException: Access denied for user 'callicoder'@'%' to database 'process-engine'
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+		at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+		at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+		at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+		at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:319)
+		at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:212)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:744)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:676)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:483)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154)
+		at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118)
+		at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107)
+		at org.apache.tomcat.jdbc.pool.DataSourceFactory.createDataSource(DataSourceFactory.java:560)
+		at org.apache.tomcat.jdbc.pool.DataSourceFactory.getObjectInstance(DataSourceFactory.java:244)
+		at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:96)
+		at java.naming/javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:330)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:857)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:160)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:843)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:174)
+		at org.apache.catalina.core.NamingContextListener.addResource(NamingContextListener.java:1015)
+		at org.apache.catalina.core.NamingContextListener.createNamingContext(NamingContextListener.java:557)
+		at org.apache.catalina.core.NamingContextListener.lifecycleEvent(NamingContextListener.java:253)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:922)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+14-Jun-2021 13:29:23.537 WARNING [main] org.apache.naming.NamingContext.lookup Unexpected exception resolving reference
+	java.sql.SQLSyntaxErrorException: Access denied for user 'callicoder'@'%' to database 'process-engine'
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+		at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+		at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+		at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+		at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:319)
+		at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:212)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:744)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:676)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:483)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154)
+		at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118)
+		at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107)
+		at org.apache.tomcat.jdbc.pool.DataSourceFactory.createDataSource(DataSourceFactory.java:560)
+		at org.apache.tomcat.jdbc.pool.DataSourceFactory.getObjectInstance(DataSourceFactory.java:244)
+		at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:96)
+		at java.naming/javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:330)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:857)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:160)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:843)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:174)
+		at org.apache.catalina.core.NamingContextListener.addResource(NamingContextListener.java:1015)
+		at org.apache.catalina.core.NamingContextListener.createNamingContext(NamingContextListener.java:557)
+		at org.apache.catalina.core.NamingContextListener.lifecycleEvent(NamingContextListener.java:253)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:922)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+14-Jun-2021 13:29:23.538 WARNING [main] org.apache.catalina.core.NamingContextListener.addResource naming.jmxRegistrationFailed
+14-Jun-2021 13:29:23.593 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08046 Found Camunda Platform configuration in CATALINA_BASE/CATALINA_HOME conf directory [/camunda/conf/bpm-platform.xml] at 'file:/camunda/conf/bpm-platform.xml'
+14-Jun-2021 13:29:23.827 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-12003 Plugin 'ProcessApplicationEventListenerPlugin' activated on process engine 'default'
+14-Jun-2021 13:29:23.837 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-12003 Plugin 'SpinProcessEnginePlugin' activated on process engine 'default'
+14-Jun-2021 13:29:23.844 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+14-Jun-2021 13:29:24.060 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+14-Jun-2021 13:29:24.076 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+14-Jun-2021 13:29:24.077 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+14-Jun-2021 13:29:24.077 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-12003 Plugin 'ConnectProcessEnginePlugin' activated on process engine 'default'
+14-Jun-2021 13:29:24.433 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo CNCT-01004 Discovered provider for connector id 'http-connector' and class 'org.camunda.connect.httpclient.impl.HttpConnectorImpl': 'org.camunda.connect.httpclient.impl.HttpConnectorProviderImpl'
+14-Jun-2021 13:29:24.439 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo CNCT-01004 Discovered provider for connector id 'soap-http-connector' and class 'org.camunda.connect.httpclient.soap.impl.SoapHttpConnectorImpl': 'org.camunda.connect.httpclient.soap.impl.SoapHttpConnectorProviderImpl'
+14-Jun-2021 13:29:25.000 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo FEEL/SCALA-01001 Spin value mapper detected
+14-Jun-2021 13:29:25.113 INFO [main] org.camunda.feel.FeelEngine.<init> Engine created. [value-mapper: CompositeValueMapper(List(org.camunda.feel.impl.JavaValueMapper@bc042d5, org.camunda.spin.plugin.impl.feel.integration.SpinValueMapper@5484117b)), function-provider: org.camunda.bpm.dmn.feel.impl.scala.function.CustomFunctionTransformer@50fb33a, clock: SystemClock, configuration: Configuration(false)]
+14-Jun-2021 13:29:25.266 SEVERE [main] org.apache.tomcat.jdbc.pool.ConnectionPool.init Unable to create initial connections of pool.
+	java.sql.SQLSyntaxErrorException: Access denied for user 'callicoder'@'%' to database 'process-engine'
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+		at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+		at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+		at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+		at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:319)
+		at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:212)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:744)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:676)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:483)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154)
+		at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118)
+		at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107)
+		at org.apache.tomcat.jdbc.pool.DataSourceFactory.createDataSource(DataSourceFactory.java:560)
+		at org.apache.tomcat.jdbc.pool.DataSourceFactory.getObjectInstance(DataSourceFactory.java:244)
+		at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:96)
+		at java.naming/javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:330)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:857)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:160)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:843)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:174)
+		at org.apache.naming.SelectorContext.lookup(SelectorContext.java:163)
+		at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
+		at org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.initDataSource(ProcessEngineConfigurationImpl.java:1484)
+		at org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.init(ProcessEngineConfigurationImpl.java:1006)
+		at org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.buildProcessEngine(ProcessEngineConfigurationImpl.java:977)
+		at org.camunda.bpm.container.impl.jmx.services.JmxManagedProcessEngineController.start(JmxManagedProcessEngineController.java:38)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.startService(MBeanServiceContainer.java:77)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.startService(MBeanServiceContainer.java:63)
+		at org.camunda.bpm.container.impl.deployment.StartProcessEngineStep.performOperationStep(StartProcessEngineStep.java:119)
+		at org.camunda.bpm.container.impl.spi.DeploymentOperation.execute(DeploymentOperation.java:120)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.executeDeploymentOperation(MBeanServiceContainer.java:160)
+		at org.camunda.bpm.container.impl.spi.DeploymentOperation$DeploymentOperationBuilder.execute(DeploymentOperation.java:216)
+		at org.camunda.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap.deployBpmPlatform(TomcatBpmPlatformBootstrap.java:83)
+		at org.camunda.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap.lifecycleEvent(TomcatBpmPlatformBootstrap.java:61)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:923)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+14-Jun-2021 13:29:25.272 WARNING [main] org.apache.naming.NamingContext.lookup Unexpected exception resolving reference
+	java.sql.SQLSyntaxErrorException: Access denied for user 'callicoder'@'%' to database 'process-engine'
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+		at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+		at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+		at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+		at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:319)
+		at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:212)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:744)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:676)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:483)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154)
+		at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118)
+		at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107)
+		at org.apache.tomcat.jdbc.pool.DataSourceFactory.createDataSource(DataSourceFactory.java:560)
+		at org.apache.tomcat.jdbc.pool.DataSourceFactory.getObjectInstance(DataSourceFactory.java:244)
+		at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:96)
+		at java.naming/javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:330)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:857)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:160)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:843)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:174)
+		at org.apache.naming.SelectorContext.lookup(SelectorContext.java:163)
+		at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
+		at org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.initDataSource(ProcessEngineConfigurationImpl.java:1484)
+		at org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.init(ProcessEngineConfigurationImpl.java:1006)
+		at org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.buildProcessEngine(ProcessEngineConfigurationImpl.java:977)
+		at org.camunda.bpm.container.impl.jmx.services.JmxManagedProcessEngineController.start(JmxManagedProcessEngineController.java:38)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.startService(MBeanServiceContainer.java:77)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.startService(MBeanServiceContainer.java:63)
+		at org.camunda.bpm.container.impl.deployment.StartProcessEngineStep.performOperationStep(StartProcessEngineStep.java:119)
+		at org.camunda.bpm.container.impl.spi.DeploymentOperation.execute(DeploymentOperation.java:120)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.executeDeploymentOperation(MBeanServiceContainer.java:160)
+		at org.camunda.bpm.container.impl.spi.DeploymentOperation$DeploymentOperationBuilder.execute(DeploymentOperation.java:216)
+		at org.camunda.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap.deployBpmPlatform(TomcatBpmPlatformBootstrap.java:83)
+		at org.camunda.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap.lifecycleEvent(TomcatBpmPlatformBootstrap.java:61)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:923)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+14-Jun-2021 13:29:25.278 SEVERE [main] org.apache.catalina.startup.Catalina.start The required Server component failed to start so Tomcat is unable to start.
+	org.apache.catalina.LifecycleException: Failed to start component [StandardServer[8005]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.camunda.bpm.engine.ProcessEngineException: ENGINE-08043 Exception while performing 'deploy BPM platform' => 'Start process engine default': couldn't lookup datasource from java:jdbc/ProcessEngine: Unexpected exception resolving reference
+		at org.camunda.bpm.container.impl.ContainerIntegrationLogger.exceptionWhilePerformingOperationStep(ContainerIntegrationLogger.java:316)
+		at org.camunda.bpm.container.impl.spi.DeploymentOperation.execute(DeploymentOperation.java:136)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.executeDeploymentOperation(MBeanServiceContainer.java:160)
+		at org.camunda.bpm.container.impl.spi.DeploymentOperation$DeploymentOperationBuilder.execute(DeploymentOperation.java:216)
+		at org.camunda.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap.deployBpmPlatform(TomcatBpmPlatformBootstrap.java:83)
+		at org.camunda.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap.lifecycleEvent(TomcatBpmPlatformBootstrap.java:61)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:923)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 7 more
+	Caused by: org.camunda.bpm.engine.ProcessEngineException: couldn't lookup datasource from java:jdbc/ProcessEngine: Unexpected exception resolving reference
+		at org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.initDataSource(ProcessEngineConfigurationImpl.java:1486)
+		at org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.init(ProcessEngineConfigurationImpl.java:1006)
+		at org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.buildProcessEngine(ProcessEngineConfigurationImpl.java:977)
+		at org.camunda.bpm.container.impl.jmx.services.JmxManagedProcessEngineController.start(JmxManagedProcessEngineController.java:38)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.startService(MBeanServiceContainer.java:77)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.startService(MBeanServiceContainer.java:63)
+		at org.camunda.bpm.container.impl.deployment.StartProcessEngineStep.performOperationStep(StartProcessEngineStep.java:119)
+		at org.camunda.bpm.container.impl.spi.DeploymentOperation.execute(DeploymentOperation.java:120)
+		... 16 more
+	Caused by: javax.naming.NamingException: Unexpected exception resolving reference [Root exception is java.sql.SQLSyntaxErrorException: Access denied for user 'callicoder'@'%' to database 'process-engine']
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:882)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:160)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:843)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:174)
+		at org.apache.naming.SelectorContext.lookup(SelectorContext.java:163)
+		at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
+		at org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.initDataSource(ProcessEngineConfigurationImpl.java:1484)
+		... 23 more
+	Caused by: java.sql.SQLSyntaxErrorException: Access denied for user 'callicoder'@'%' to database 'process-engine'
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+		at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+		at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+		at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+		at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:319)
+		at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:212)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:744)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:676)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:483)
+		at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154)
+		at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118)
+		at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107)
+		at org.apache.tomcat.jdbc.pool.DataSourceFactory.createDataSource(DataSourceFactory.java:560)
+		at org.apache.tomcat.jdbc.pool.DataSourceFactory.getObjectInstance(DataSourceFactory.java:244)
+		at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:96)
+		at java.naming/javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:330)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:857)
+		... 29 more
+14-Jun-2021 13:29:25.295 SEVERE [main] org.camunda.commons.logging.BaseLogger.logError ENGINE-08044 Exception while performing 'Stop managed thread pool': Cannot stop service org.camunda.bpm.platform:type=executor-service: no such service registered: service is null
+	org.camunda.bpm.engine.exception.NullValueException: Cannot stop service org.camunda.bpm.platform:type=executor-service: no such service registered: service is null
+		at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+		at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+		at org.camunda.bpm.engine.impl.util.EnsureUtil.generateException(EnsureUtil.java:394)
+		at org.camunda.bpm.engine.impl.util.EnsureUtil.ensureNotNull(EnsureUtil.java:55)
+		at org.camunda.bpm.engine.impl.util.EnsureUtil.ensureNotNull(EnsureUtil.java:50)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.stopService(MBeanServiceContainer.java:121)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.stopService(MBeanServiceContainer.java:109)
+		at org.camunda.bpm.container.impl.deployment.jobexecutor.StopManagedThreadPoolStep.performOperationStep(StopManagedThreadPoolStep.java:37)
+		at org.camunda.bpm.container.impl.spi.DeploymentOperation.execute(DeploymentOperation.java:120)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.executeDeploymentOperation(MBeanServiceContainer.java:160)
+		at org.camunda.bpm.container.impl.spi.DeploymentOperation$DeploymentOperationBuilder.execute(DeploymentOperation.java:216)
+		at org.camunda.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap.undeployBpmPlatform(TomcatBpmPlatformBootstrap.java:101)
+		at org.camunda.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap.lifecycleEvent(TomcatBpmPlatformBootstrap.java:66)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:967)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+		at org.apache.catalina.util.LifecycleBase.destroy(LifecycleBase.java:293)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:776)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+14-Jun-2021 13:29:25.303 SEVERE [main] org.camunda.commons.logging.BaseLogger.logError ENGINE-08044 Exception while performing 'Unregistering BPM Platform Plugins': Cannot stop service org.camunda.bpm.platform:type=bpm-platform-plugins: no such service registered: service is null
+	org.camunda.bpm.engine.exception.NullValueException: Cannot stop service org.camunda.bpm.platform:type=bpm-platform-plugins: no such service registered: service is null
+		at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+		at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+		at org.camunda.bpm.engine.impl.util.EnsureUtil.generateException(EnsureUtil.java:394)
+		at org.camunda.bpm.engine.impl.util.EnsureUtil.ensureNotNull(EnsureUtil.java:55)
+		at org.camunda.bpm.engine.impl.util.EnsureUtil.ensureNotNull(EnsureUtil.java:50)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.stopService(MBeanServiceContainer.java:121)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.stopService(MBeanServiceContainer.java:109)
+		at org.camunda.bpm.container.impl.deployment.UnregisterBpmPlatformPluginsStep.performOperationStep(UnregisterBpmPlatformPluginsStep.java:37)
+		at org.camunda.bpm.container.impl.spi.DeploymentOperation.execute(DeploymentOperation.java:120)
+		at org.camunda.bpm.container.impl.jmx.MBeanServiceContainer.executeDeploymentOperation(MBeanServiceContainer.java:160)
+		at org.camunda.bpm.container.impl.spi.DeploymentOperation$DeploymentOperationBuilder.execute(DeploymentOperation.java:216)
+		at org.camunda.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap.undeployBpmPlatform(TomcatBpmPlatformBootstrap.java:101)
+		at org.camunda.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap.lifecycleEvent(TomcatBpmPlatformBootstrap.java:66)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:967)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+		at org.apache.catalina.util.LifecycleBase.destroy(LifecycleBase.java:293)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:776)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+14-Jun-2021 13:29:25.305 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08049 Camunda Platform stopped at 'Apache Tomcat/9.0.43'
+14-Jun-2021 13:29:25.307 SEVERE [main] org.apache.catalina.util.LifecycleBase.destroy Called stop() on failed component [StandardServer[8005]] to trigger clean-up but it failed too
+	org.apache.catalina.LifecycleException: An invalid Lifecycle transition was attempted ([before_stop]) for component [StandardService[Catalina]] in state [INITIALIZED]
+		at org.apache.catalina.util.LifecycleBase.invalidTransition(LifecycleBase.java:430)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:244)
+		at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:982)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+		at org.apache.catalina.util.LifecycleBase.destroy(LifecycleBase.java:293)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:776)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+14-Jun-2021 13:29:25.308 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
